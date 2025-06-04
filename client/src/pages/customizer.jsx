@@ -53,7 +53,8 @@ const Customizer = () => {
     try {
       setGeneratingImg(true);
 
-      const response = await fetch('http://localhost:8080/api/v1/dalle', {
+      const backendUrl = config[import.meta.env.MODE].backendUrl;
+      const response = await fetch(backendUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
